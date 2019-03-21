@@ -8,11 +8,11 @@ const menu = {
   "button":[
     {
       "type":"click",  // 单击菜单
-      "name":"首页☀",
+      "name":"刺激战场☀",
       "key":"home"
     },
     {
-      "name":"菜单🙏",
+      "name":"立即开黑👿",
       "sub_button":[
         {
           "type":"view",  // 跳转到指定网址
@@ -42,7 +42,7 @@ const menu = {
       ]
     },
     {
-      "name":"菜单二💋",
+      "name":"刺激助手😁",
       "sub_button":[
         {
           "type": "pic_weixin",

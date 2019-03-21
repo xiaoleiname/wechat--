@@ -28,8 +28,8 @@ const { writeFile, readFile } = require('fs');
 
 // 发送请求、获取access_token，保存起来，设置过期时间
 async function getAccessToken() {
-  const appId = 'wxc8e92f7ab70fbca0';
-  const appSecret = 'b4054e90b75787c78e0af50bf7fc3e87';
+  const appId = 'wxd2c1b53cfe304c60';
+  const appSecret = '19a5ca2f16d701169893f623f92931f7';
   // 定义请求地址
   const url = `https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${appId}&secret=${appSecret}`;
   // 发送请求
@@ -45,6 +45,7 @@ async function getAccessToken() {
   // 返回获取好的access_token
   return result;
 }
+
 
 // 得到最终有效的access_token
 module.exports = function fetchAccessToken() {
