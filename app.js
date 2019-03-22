@@ -14,6 +14,20 @@ const app = express();
     2）将三个参数字符串拼接成一个字符串进行sha1加密
     3）开发者获得加密后的字符串可与signature对比，标识该请求来源于微信
  */
+//设置ejs
+app.set('views','views');
+app.set('view engine','ejs');
+
+
+app.get('/search',(req,res) =>{
+
+
+
+
+
+
+  res.render('search',{});
+})
 
 app.use(reply());
 

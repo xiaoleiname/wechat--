@@ -3,6 +3,8 @@
  */
 const rp = require('request-promise-native');
 const fetchAccessToken = require('./access-token');
+
+const URL_PREFIX = 'https://api.weixin.qq.com/cgi-bin/';
 // 菜单配置项
 const menu = {
   "button":[
@@ -64,7 +66,7 @@ async function createMenu() {
   // 获取access_token
   const { access_token } = await fetchAccessToken();
   // 定义请求地址
-  const url = `https://api.weixin.qq.com/cgi-bin/menu/create?access_token=${access_token}`;
+  const url = `${URL_PREFIX}menu/create?access_token=${access_token}`;
   // 发送请求
   const result = await rp({method: 'POST', url, json: true, body: menu});
   
@@ -75,12 +77,36 @@ async function deleteMenu() {
   // 获取access_token
   const { access_token } = await fetchAccessToken();
   // 定义请求地址
-  const url = `https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=${access_token}`;
+  const url = `${URL_PREFIX}menu/delete?access_token=${access_token}`;
   // 发送请求
   const result = await rp({method: 'GET', url, json: true});
   
   return result;
 }
+
+
+
+// async function createTag(name) {
+//     //获取access_token
+//     const { access_token } = await  fetchAccessToken();
+//     //定义请求
+//     const  url = `${URL_PREFIX}tags/create?access_token=${access_token}`;
+//     //发送请求
+//     rp({method:'POST',url,json:true,body: {tag: {name}}})
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 (async () => {
   let result = await deleteMenu();

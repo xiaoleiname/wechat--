@@ -1,0 +1,7 @@
+async  await  :用同步的方法处理异步，后面跟着promise对象
+
+require 模块   result 结果  createMenu 菜单  deleteMenu 删除菜单
+
+promise (resolve,reject) .then() .catch()   then方法里面第一个回调函数表示成功状态，也就是resolve通过.then调用，第二个是失败状态-reject通过.Cath调用
+
+listen

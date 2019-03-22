@@ -38,10 +38,12 @@ async function getAccessToken() {
   // 设置过期时间 2小时更新，提前5分钟刷新
   result.expires_in = Date.now() + 7200000 - 300000;
   // 保存为一个文件 ---> 只能保存字符串数据，将js对象转换为json字符串
-  writeFile('./accessToken.txt', JSON.stringify(result), (err) => {
-    if (!err) console.log('文件保存成功');
-    else console.log(err);
-  })
+    await new Promise((resolve, reject) => {
+        writeFile('./accessToken.txt', JSON.stringify(result), (err) => {
+            if (!err) resolve();
+            else reject(err);
+        })
+    })
   // 返回获取好的access_token
   return result;
 }
